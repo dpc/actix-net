@@ -82,9 +82,10 @@ impl ServerBuilder {
         self
     }
 
-    /// Stop actix system.
+    /// Stop actix system on own exit.
     ///
-    /// `SystemExit` message stops currently running system.
+    /// Make `ServerCommand::Stop` message addionally stop
+    /// the `System` this `Server` is running in.
     pub fn system_exit(mut self) -> Self {
         self.exit = true;
         self
